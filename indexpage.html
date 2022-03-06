@@ -10,8 +10,54 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
+<style>
+
+.nav navbar-nav navbar-right{
+padding-right: 90%;
+overflow: hidden;
+margin-right: 90%;
+}
+
+.navbar-header{
+position: absolute;
+top: 50%;
+transform: translate(0, -50%);
+padding-left: 50%;
+color: white;
+}
+</style>
+
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid"> 
+        <div class="collapse navbar-collapse" id="main_nav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="indexpage.html" style="font-size:30px"> Index </a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html" style="font-size:30px"> About</a></li>
+            </ul>
+        
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <div class="navbar-header">
+                       <a class="navbar-brand"style="font-size:50px"> Title </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" id="div1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <img  src="acg.png" width="40%" id="eye">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>    
+</nav>
+</head>
 
 <body>
+
     <h1>Dynamically Add & Remove Table Rows</h1>
     <form>
         <div class="form-group">
@@ -53,7 +99,7 @@
                 <td>${url}</td>
                 <td>${website}</td>
                 <td>${maybe}</td>
-                <td><button type="button" class="deleteBtn btn btn-danger"  >Danger</button></td>
+                <td><button type="button" class="deleteBtn btn btn-danger"  >Delete</button></td>
                  
             </tr>
         `;
@@ -127,7 +173,20 @@
         }
 
 
-
+    document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                document.getElementById('navbar_top').classList.add('fixed-top');
+                // add padding top to show content behind navbar
+                navbar_height = document.querySelector('.navbar').offsetHeight;
+                document.body.style.paddingTop = navbar_height + 'px';
+            } else {
+                document.getElementById('navbar_top').classList.remove('fixed-top');
+                // remove padding top from body
+                document.body.style.paddingTop = '0';
+            }
+        });
+    }); 
 
 
 
