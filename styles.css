@@ -85,3 +85,20 @@
 }
 
 /* Styles for GRID - End */
+
+/*Styles for indexpage */
+
+#eye {
+        width: 3%;
+        position: absolute;
+        transform: translateX(2500%);
+    }
+
+
+
+    .navbar-header {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(100%);
+        color: rgb(255, 255, 255);
+    }
