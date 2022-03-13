@@ -5,59 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
+
 </head>
-<style>
 
-.nav navbar-nav navbar-right{
-padding-right: 90%;
-overflow: hidden;
-margin-right: 90%;
-}
+<head>
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-.navbar-header{
-position: absolute;
-top: 50%;
-transform: translate(0, -50%);
-padding-left: 50%;
-color: white;
-}
-</style>
+        <div class="container-fluid">
 
-<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid"> 
-        <div class="collapse navbar-collapse" id="main_nav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="indexpage.html" style="font-size:30px"> Index </a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" style="font-size:30px"> About</a></li>
-            </ul>
-        
-            <div class="container-fluid">
-                <div class="col-md-12">
-                    <div class="navbar-header">
-                       <a class="navbar-brand"style="font-size:50px"> Title </a>
-                    </div>
-                </div>
-            </div>
+            <div class="collapse navbar-collapse" id="main_nav">
 
-            <div class="container-fluid" id="div1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <img  src="acg.png" width="40%" id="eye">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="indexpage.html" style="font-size:30px"> Index </a>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" style="font-size:30px"> About</a></li>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" style="font-size: 50px"> Choix du logiciel </a>
+                            </div>
+                        </div>
+                    </div>
+                    <li><img src="acg.png" id="logo"></li>
                 </ul>
             </div>
         </div>
-        
-    </div>    
-</nav>
+    </nav>
 </head>
 
 <body>
-
+    
     <h1>Dynamically Add & Remove Table Rows</h1>
     <form>
         <div class="form-group">
@@ -72,7 +53,7 @@ color: white;
             <label for="maybe">maybe</label><br>
             <input type="text" name="website" id="maybe" />
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" id="sub">Submit</button>
     </form>
     <table id="myTable2" class="table table-bordered">
         <thead class="thead-dark">
@@ -173,20 +154,20 @@ color: white;
         }
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 50) {
-                document.getElementById('navbar_top').classList.add('fixed-top');
-                // add padding top to show content behind navbar
-                navbar_height = document.querySelector('.navbar').offsetHeight;
-                document.body.style.paddingTop = navbar_height + 'px';
-            } else {
-                document.getElementById('navbar_top').classList.remove('fixed-top');
-                // remove padding top from body
-                document.body.style.paddingTop = '0';
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    document.getElementById('navbar_top').classList.add('fixed-top');
+                    // add padding top to show content behind navbar
+                    navbar_height = document.querySelector('.navbar').offsetHeight;
+                    document.body.style.paddingTop = navbar_height + 'px';
+                } else {
+                    document.getElementById('navbar_top').classList.remove('fixed-top');
+                    // remove padding top from body
+                    document.body.style.paddingTop = '0';
+                }
+            });
         });
-    }); 
 
 
 
