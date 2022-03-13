@@ -88,17 +88,27 @@
 
 /*Styles for indexpage */
 
-#eye {
-        width: 3%;
-        position: absolute;
-        transform: translateX(2500%);
-    }
+#logo {
+  width: 3%;
+  position: absolute;
+  transform: translateX(2500%);
+}
 
 
 
-    .navbar-header {
-        position: absolute;
-        bottom: 5%;
-        transform: translateX(100%);
-        color: rgb(255, 255, 255);
-    }
+.navbar-header {
+  position: absolute;
+  bottom: 5%;
+  transform: translateX(100%);
+  color: rgb(255, 255, 255); 
+}
+
+.form-group {
+  margin-left: 1%;
+}
+
+#sub{
+  margin-left: 8.5%;
+}
+
+  
